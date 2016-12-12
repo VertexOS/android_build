@@ -63,6 +63,9 @@ if [ "$TARGET_UNIFIED_DEVICE" == "" ] ; then
     echo "ro.build.thumbprint=$BUILD_THUMBPRINT"
   fi
 fi
+if [ -n "$DEVICE_MAINTAINER" ] ; then
+  echo "ro.vertex.maintainer=$DEVICE_MAINTAINER"
+fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
 echo "ro.vertex.device=$VERTEX_DEVICE"
