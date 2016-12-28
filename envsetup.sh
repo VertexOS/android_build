@@ -77,11 +77,11 @@ function build_build_var_cache()
 function destroy_build_var_cache()
 {
     unset BUILD_VAR_CACHE_READY
-    for v in $cached_vars; do
+    for v in $(echo $cached_vars | tr " " "\n"); do
       unset var_cache_$v
     done
     unset cached_vars
-    for v in $cached_abs_vars; do
+    for v in $(echo $cached_abs_vars | tr " " "\n"); do
       unset abs_var_cache_$v
     done
     unset cached_abs_vars
@@ -629,7 +629,10 @@ function lunch()
         popd > /dev/null
         check_product $product
     else
+        T=$(gettop)
+        pushd $T > /dev/null
         vendor/vertex/build/tools/roomservice.py $product true
+        popd > /dev/null
     fi
     TARGET_PRODUCT=$product \
     TARGET_BUILD_VARIANT=$variant \
@@ -1717,4 +1720,4 @@ check_bash_version && {
 
 export ANDROID_BUILD_TOP=$(gettop)
 
-. vendor/vertex/build/envsetup.sh
+. $ANDROID_BUILD_TOP/vendor/vertex/build/envsetup.sh
