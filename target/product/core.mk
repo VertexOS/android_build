@@ -21,7 +21,6 @@
 # core_tiny.mk in addition to core_minimal.mk.
 
 PRODUCT_PACKAGES += \
-    BasicDreams \
     BlockedNumberProvider \
     BookmarkProvider \
     CalendarProvider \
@@ -41,13 +40,11 @@ PRODUCT_PACKAGES += \
     Launcher2 \
     ManagedProvisioning \
     MtpDocumentsProvider \
-    PicoTts \
     PacProcessor \
     libpac \
     PrintSpooler \
     PrintRecommendationService \
     ProxyHandler \
-    QuickSearchBox \
     Settings \
     SharedStorageBackup \
     StorageManager \
