@@ -131,9 +131,9 @@ PRODUCT_PACKAGES += \
     vold \
     wm
 
-
-PRODUCT_COPY_FILES := $(call add-to-product-copy-files-if-exists,\
-    frameworks/base/preloaded-classes:system/etc/preloaded-classes)
+# Shifted to vendor/vertex
+# PRODUCT_COPY_FILES := $(call add-to-product-copy-files-if-exists,\
+#    frameworks/base/preloaded-classes:system/etc/preloaded-classes)
 
 # Note: it is acceptable to not have a compiled-classes file. In that case, all boot classpath
 #       classes will be compiled.
